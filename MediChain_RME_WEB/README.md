@@ -55,10 +55,3 @@ Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) dan mengonfigurasi
    
 ***Catatan Penting***
 Setiap interaksi yang mengubah status pada ledger (seperti registrasi, penambahan rekam medis, dan pengaturan akses) memerlukan gas fee. Pastikan wallet Anda memiliki saldo testnet (Sepolia) yang cukup.
-
-## PENJELASAN
-- DIAGRAM RME (kumpulan diagram flowchart, class diagram, dst.)
-- MEDICHAIN RME WEB (kumpulan codingan web MEDICHAIN)
-- SMART CONTRACT (file dari Remix IDE ada RME.sol dan contractABI.js)
-- UAS (file laporan UAS, project charter, ppt)
-- UTS (file laporan UTS, project charter, ppt)
