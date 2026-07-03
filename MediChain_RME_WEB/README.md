@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# MediChain - Website Rekam Medis Elektronik Berbasis Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Platform rekam medis elektronik terdesentralisasi yang mengintegrasikan teknologi *blockchain* dengan penyimpanan *off-chain* berbasis IPFS untuk menjamin keamanan, privasi, dan kedaulatan data kesehatan pasien.
 
-## Available Scripts
+**LINK WEBSITE TERDEPLOY DI VERCEL :** [MEDICHAIN - RME](https://kelompok-5-teknologi-blockchain-c.vercel.app)
 
-In the project directory, you can run:
+**LINK LIVE DEMO GOOGLE DRIVE :** [LIVE DEMO MEDICHAIN](https://youtube.com) 
 
-### `npm start`
+###### Ringkasan Proyek
+MediChain mengintegrasikan teknologi *blockchain* (Solidity) dengan penyimpanan *off-chain* (IPFS) untuk memastikan transparansi dan kedaulatan data kesehatan. Pasien memiliki kontrol penuh atas hak akses rekam medis mereka melalui mekanisme otorisasi *on-chain* yang ketat.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###### Fitur Utama
+* **Manajemen Identitas Terstruktur**: Pendaftaran dengan pembagian peran (Pasien, Dokter, Admin).
+* **Otorisasi On-Chain**: Pasien dapat memberikan (`grantAccess`) dan mencabut (`revokeAccess`) izin akses kepada dokter secara langsung.
+* **Integritas Data**: Menggunakan `sha256Hash` dan IPFS CID untuk menjamin data medis bersifat *tamper-proof*.
+* **Kontrol Administratif**: Admin memiliki akses untuk moderasi pengguna (`deactivateUser`/`reactivateUser`) dan pengawasan sistem.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###### Tech Stack
+* **Blockchain**: Solidity (Smart Contract `RME.sol`)
+* **Frontend**: React.js & Ethers.js
+* **Storage**: IPFS (Off-chain)
+* **Wallet**: MetaMask (Ethereum Sepolia Tesnet Network)
 
-### `npm test`
+###### Arsitektur Smart Contract (RME.sol)
+* **`onlyRegistered`**: Memastikan hanya pengguna yang terdaftar yang dapat berinteraksi.
+* **`onlyDoctor` / `onlyPatient` / `onlyAdmin`**: Membatasi fungsi berdasarkan *role* pengguna.
+* **`hasAccess(address patient)`**: *Modifier* keamanan utama yang memvalidasi izin akses dokter atau admin terhadap data pasien sebelum data diakses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###### Fungsi Smart Contract (RME.sol)
+Kontrak pintar ini berfungsi sebagai *single source of truth*. Fungsi inti meliputi:
+* **Registrasi**: `registerUser()` untuk pendaftaran pengguna baru.
+* **Manajemen Akses**: `grantAccess()`, `revokeAccess()`, dan `checkAccess()`.
+* **Rekam Medis**: 
+    * `addMedicalRecord()`: Penambahan data oleh dokter terotorisasi.
+    * `getRecords()`: Pengambilan riwayat medis dengan pengecekan `hasAccess` modifier.
+    * `verifyIntegrity()`: Verifikasi hash untuk memastikan data tidak berubah.
+* **Fungsi Admin**: `deactivateUser()`, `reactivateUser()`, dan `getRecordsAdmin()`.
 
-### `npm run build`
+###### Cara Menjalankan Project
+Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) dan mengonfigurasi [MetaMask](https://metamask.io/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone Repository**
+   ```bash
+   git clone [https://github.com/alfifaza/Kelompok-5_Teknologi-Blockchain_C](https://github.com/alfifaza/Kelompok-5_Teknologi-Blockchain_C)
+   cd MediChain_RME_WEB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. **Install Dependencies**
+   ```bash
+   npm install
+   
+4. **Jalankan Aplikasi**
+   ```bash
+   npm start
+  Akses aplikasi di browser: http://localhost:3000.
+   
+***Catatan Penting***
+Setiap interaksi yang mengubah status pada ledger (seperti registrasi, penambahan rekam medis, dan pengaturan akses) memerlukan gas fee. Pastikan wallet Anda memiliki saldo testnet (Sepolia) yang cukup.
