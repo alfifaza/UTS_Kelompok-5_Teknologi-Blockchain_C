@@ -4,7 +4,7 @@ Platform rekam medis elektronik terdesentralisasi yang mengintegrasikan teknolog
 
 **LINK WEBSITE TERDEPLOY DI VERCEL :** [MEDICHAIN - RME](https://kelompok-5-teknologi-blockchain-c.vercel.app)
 
-**LINK LIVE DEMO GOOGLE DRIVE :** [LIVE DEMO MEDICHAIN](https://youtube.com) 
+**LINK LIVE DEMO YOUTUBE :** [LIVE DEMO MEDICHAIN](https://youtube.com) 
 
 ###### Ringkasan Proyek
 MediChain mengintegrasikan teknologi *blockchain* (Solidity) dengan penyimpanan *off-chain* (IPFS) untuk memastikan transparansi dan kedaulatan data kesehatan. Pasien memiliki kontrol penuh atas hak akses rekam medis mereka melalui mekanisme otorisasi *on-chain* yang ketat.
