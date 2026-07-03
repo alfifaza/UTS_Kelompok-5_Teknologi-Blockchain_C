@@ -4,7 +4,7 @@ Platform rekam medis elektronik terdesentralisasi yang mengintegrasikan teknolog
 
 **LINK WEBSITE TERDEPLOY DI VERCEL :** [MEDICHAIN - RME](https://kelompok-5-teknologi-blockchain-c.vercel.app)
 
-**LINK LIVE DEMO GOOGLE DRIVE :** [LIVE DEMO MEDICHAIN](https://youtube.com) 
+**LINK LIVE DEMO YOUTUBE :** [LIVE DEMO MEDICHAIN](https://youtu.be/XrKVT3AunU8?si=nhyWD3mY7R6_ekSC) 
 
 ###### Ringkasan Proyek
 MediChain mengintegrasikan teknologi *blockchain* (Solidity) dengan penyimpanan *off-chain* (IPFS) untuk memastikan transparansi dan kedaulatan data kesehatan. Pasien memiliki kontrol penuh atas hak akses rekam medis mereka melalui mekanisme otorisasi *on-chain* yang ketat.
@@ -55,3 +55,10 @@ Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) dan mengonfigurasi
    
 ***Catatan Penting***
 Setiap interaksi yang mengubah status pada ledger (seperti registrasi, penambahan rekam medis, dan pengaturan akses) memerlukan gas fee. Pastikan wallet Anda memiliki saldo testnet (Sepolia) yang cukup.
+
+## PENJELASAN
+- DIAGRAM RME (kumpulan diagram flowchart, class diagram, dst.)
+- MEDICHAIN RME WEB (kumpulan codingan web MEDICHAIN)
+- SMART CONTRACT (file dari Remix IDE ada RME.sol dan contractABI.js)
+- UAS (file laporan UAS, project charter, ppt)
+- UTS (file laporan UTS, project charter, ppt)
